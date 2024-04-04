@@ -1,0 +1,17 @@
+1. user dashboard (past orders, featured businesses)
+2. business page
+    - name, address, ratings
+    - menu list
+        - menu items and prices
+        - add item to cart page
+    - reviews
+3. my cart page
+    - order items list
+        - prices, total cost
+        - note by customer
+4. order confirmation page
+    - order summary
+    - confirm button
+5. order history page
+6. customer reviews page
+7. add link to user profile in navbar

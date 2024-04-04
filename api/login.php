@@ -50,9 +50,11 @@
 		// 		</script>";
 		$big = "Could not log in !";
 		$mid = "Invalid Username/Email or Password.";
-		$sml = "Going back to main page...".$pwd;
+		$sml = "Going back to main page...";
 		$fce = "<style> .between-smile { display: none !important; } </style>";
+		$_SESSION['invalidlogin'] = true;
 	} else {
+		$_SESSION['invalidlogin'] = false;
 		$_SESSION['accid'] = $row[0];
 		$_SESSION['userid'] = $row[4];
 		$_SESSION['username'] = $row[2];

@@ -27,10 +27,10 @@
 <body style="padding-bottom: 10rem;">
     <?php require_once("includes/header.php") ?>
     <?php 
-    // if(!isset($_SESSION['userid'])){
-    //     header("Location: index.php");
-    // }
     session_start();
+    if(!isset($_SESSION['userid'])){
+        header("Location: index.php");
+    }
     ?>
     <div class="row">
         <div class="col-1"></div>
