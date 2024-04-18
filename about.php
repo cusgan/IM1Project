@@ -23,6 +23,7 @@
         <main>
             <?php require_once 'includes/login.php'; ?>
             <?php require_once 'includes/signup.php'; ?>
+            <?php require_once('includes/signupbusiness.php'); ?>
 
             <!-- About Us -->
             <br>

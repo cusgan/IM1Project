@@ -17,6 +17,9 @@
               <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalSignup">Sign Up</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalSignupBusiness">Apply as Business</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="about.php">About & Contact</a>
             </li>
           </ul>

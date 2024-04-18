@@ -26,13 +26,16 @@
         ></script>
 </head>
 <body style="padding-bottom: 10rem;">
-    <?php require_once("includes/header.php") ?>
+    <?php require_once("includes/header.php"); ?>
+    <?php require_once('includes/login.php'); ?>
+    <?php require_once('includes/signup.php'); ?>
+    <?php require_once('includes/signupbusiness.php'); ?>
     <?php 
     // if(!isset($_SESSION['userid'])){
     //     header("Location: index.php");
     // }
     include_once("api/connect.php");
-    session_start();
+    //session_start();
     $business_id = 1;
     $business = mysqli_fetch_array(mysqli_query($connection,"select * from tblbusiness where businessid='".$business_id."'"));
     $business_name = $business[1];
