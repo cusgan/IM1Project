@@ -89,14 +89,18 @@
                 </svg>
             <br><br>
             <p><?php echo $business_desc;?></p>
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16" style="margin-top:-5px;">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                 </svg> <?php echo $business_addr;?>  </p>
         
             
 
             <!-- <button type="button" class="btn btn-primary">Add New Menu Item</button> -->
-            <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modalAddItem"> Add New Menu Item</a>
+            <a class="btn btn-success" href="#" data-bs-toggle="modal" data-bs-target="#modalAddItem"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16" style="margin-top:-5px;">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg><i class="bi bi-plus-circle-fill"></i>
+                Add New Menu Item</a>
             <div class="modal fade" id="modalAddItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -111,18 +115,24 @@
                             <?php echo '<input type="hidden" id="menuid" name="menuid" value="'.$menu_id.'">'?>
                             <!-- <img src="images\default-image.png" class="img-thumbnail" alt="name of item here" style = "width:30%;"> -->
                             <label for="addItemName" class="form-label">Item Name: </label>
-                            <input type="text" name="inptItemName" class="form-control" id="addItemName" aria-describedby="addItemName">
+                            <input type="text" name="inptItemName" class="form-control" id="addItemName" aria-describedby="addItemName" placeholder="Enter item name...">
                             <label for="addItemDescription" class="form-label">Item Description: </label>
-                            <input type="text" name="inptDescription" class="form-control" id="addItemDescription" aria-describedby="addItemDescription">
+                            <input type="text" name="inptDescription" class="form-control" id="addItemDescription" aria-describedby="addItemDescription" placeholder="Enter item description...">
                             <label for="quantity" class="form-label">Quantity:</label>
                             <input type="number" class="form-control" name="inptStock" id="input2" placeholder="Enter quantity...">
                             <label for="price" class="form-label">Price: </label>
                             <input type="number" class="form-control" name="inptPrice" id="input1" placeholder="Enter price...">
+
+                            <label for="image" class="form-label">Item Image: </label>
+                            <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="itemimg" id="image" accept=".png, .jpeg, image/png, image/jpeg" >
+                            <label class="input-group-text" for="image">Upload</label>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    <button type="submit" class="btn btn-primary">Add to Menu</button>
                     </div>
                 </form>
                 </div>
