@@ -6,8 +6,12 @@
         <h5 class="modal-title" id="exampleModalLabel">Apply as Business</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="post" action="api/signup.php">
+        <form method="post" action="api/signupbusiness.php">
             <div class="modal-body">
+                <div class="mb-3">
+                <label for="signupEmailB" class="form-label">Email address</label>
+                <input type="email" name="busMail" class="form-control" id="signupEmailB" aria-describedby="emailHelp">
+                </div>
                 <div class="mb-3">
                 <label for="signupUsernameB" class="form-label">Business Name</label>
                 <input type="username" name="busName" class="form-control" id="signupUsernameB" aria-describedby="usernameHelp">
@@ -23,6 +27,10 @@
                 <div class="mb-3">
                 <label for="signupLastnam1eB" class="form-label">Menu Description</label>
                 <input type="username" name="busMenu" class="form-control" id="signupLastnam1eB" aria-describedby="usernameHelp">
+                </div>
+                <div class="mb-3">
+                <label for="signupPasswordB" class="form-label">Password</label>
+                <input type="password" name="busPass" class="form-control" id="signupPasswordB">
                 </div>
                 <!--<button type="submit" class="btn btn-primary">Submit</button>-->                  
             </div>

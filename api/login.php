@@ -26,12 +26,12 @@
 </head>
 <body>
 <?php
-  	header( "refresh:4; url=../user.php" ); 
+  	header( "refresh:2; url=../user.php" ); 
 	include_once("connect.php");
 	$inpt = $_POST['inptEmailUsername'];
 	//$pwd = $_POST['inptPassword']; 
     $pwd = base64_encode($_POST["inptPassword"]);
-	$sql ="select * from tblAccount where email='".$inpt."'";
+	$sql ="select * from tblAccount where email='$inpt'";
 	$sql2="select * from tblAccount where name='".$inpt."'";
 	$resultuname = mysqli_query($connection,$sql2);
 	$resultemail = mysqli_query($connection,$sql);
@@ -54,16 +54,34 @@
 		$fce = "<style> .between-smile { display: none !important; } </style>";
 		$_SESSION['invalidlogin'] = true;
 	} else {
+		
 		$_SESSION['invalidlogin'] = false;
 		$_SESSION['accid'] = $row[0];
 		$_SESSION['userid'] = $row[4];
 		$_SESSION['username'] = $row[2];
 		$_SESSION['email'] = $row[1];
-		$userinfo = mysqli_fetch_array(mysqli_query($connection, "select * from tblUser where userid=".$_SESSION['userid']));
-		$_SESSION['fname'] = $userinfo[2];
-		$_SESSION['lname'] = $userinfo[3];
-		$_SESSION['address'] = $userinfo[4];
-		$_SESSION['birthday'] = $userinfo[5];
+		if($row[3] == 1){
+			$userinfo = mysqli_fetch_array(mysqli_query($connection, "select * from tblUser where userid=".$_SESSION['userid']));
+			$_SESSION['fname'] = $userinfo[2];
+			$_SESSION['lname'] = $userinfo[3];
+			$_SESSION['address'] = $userinfo[4];
+			$_SESSION['birthday'] = $userinfo[5];
+			$big = "Successfully logged in!";
+			$mid = "Welcome back, ".$row[2];
+			$sml = "Taking you to your profile...";
+			$fce = "<style> .between-frown { display: none !important; } </style>";
+		} else if ($row[3] == 2) {
+			$businfo = mysqli_fetch_array(mysqli_query($connection, "select * from tblBusiness where businessid=".$_SESSION['userid']));
+			$_SESSION['businessid'] = $row[4];
+			$_SESSION['bname'] = $businfo[2];
+			$_SESSION['bdesc'] = $businfo[3];
+			$_SESSION['baddr'] = $businfo[4];
+			$big = "Successfully logged in!";
+			$mid = "Welcome back, ".$businfo[2];
+			$sml = "Taking you to your menu view...";
+			$fce = "<style> .between-frown { display: none !important; } </style>";
+			header( "refresh:2; url=../business.php" ); 
+		}
 
 		// echo "<script language='javascript'>
 		// 		alert('Successfully log in ! ! ! ! ! ! Welcome ".$_SESSION["username"]."');

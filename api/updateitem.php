@@ -1,5 +1,5 @@
 <?php
-header( "refresh:10; url=../business.php" ); 
+header( "refresh:1; url=../business.php" ); 
 include_once("connect.php");
 $id = $_POST["itemid"];
 $menuid = $_POST["menuid"];

@@ -26,21 +26,22 @@
         ></script>
 </head>
 <body style="padding-bottom: 10rem;">
-    <?php require_once("includes/header.php"); ?>
-    <?php require_once('includes/login.php'); ?>
-    <?php require_once('includes/signup.php'); ?>
-    <?php require_once('includes/signupbusiness.php'); ?>
     <?php 
+    session_start();
+
+    require_once("includes/header.php"); 
+    require_once('includes/login.php'); 
+    require_once('includes/signup.php');
+    require_once('includes/signupbusiness.php'); 
     // if(!isset($_SESSION['userid'])){
     //     header("Location: index.php");
     // }
     include_once("api/connect.php");
-    //session_start();
-    $business_id = 1;
-    $business = mysqli_fetch_array(mysqli_query($connection,"select * from tblbusiness where businessid='".$business_id."'"));
-    $business_name = $business[1];
-    $business_desc = $business[2];
-    $business_addr = $business[3];
+    $business_id = $_SESSION['businessid'];
+    //$business = mysqli_fetch_array(mysqli_query($connection,"select * from tblbusiness where businessid='".$business_id."'"));
+    $business_name = $_SESSION['bname'];
+    $business_desc = $_SESSION['bdesc'];
+    $business_addr = $_SESSION['baddr'];
 
     $menu = mysqli_fetch_array(mysqli_query($connection,"select * from tblmenu where businessid='".$business_id."'"));
     $menu_id   = $menu[0];
