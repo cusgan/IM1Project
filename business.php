@@ -106,6 +106,15 @@
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                 </svg><i class="bi bi-plus-circle-fill"></i>
                 Add New Menu Item</a>
+            <a
+                name=""
+                id=""
+                class="btn btn-primary"
+                href="businessreport.php"
+                role="button"
+                >Business Report</a
+            >
+            
             <div class="modal fade" id="modalAddItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                 <div class="modal-content">
