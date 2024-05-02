@@ -56,8 +56,6 @@
                                         <tr>
                                             <th scope="col">Customer Account ID</th>
                                             <th scope="col">Customer Name</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
                                             <th scope="col">Address</th>
                                             <th scope="col">Birth Date</th>
                                         </tr>
@@ -68,13 +66,9 @@
                                             <td>R1C2</td>
                                             <td>R1C3</td>
                                             <td>R1C3</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
                                         </tr>
                                         <tr class="">
                                             <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
                                             <td>Item</td>
                                             <td>Item</td>
                                             <td>Item</td>
@@ -121,7 +115,7 @@
                         </div>
                         <!-- third tab -->
                         <div class="tab-pane fade" id="report3" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                            <h3>No. of Customers that have bought Item Name</h3>
+                            <h3>No. of Customers that have placed at least 3 Orders</h3>
                             <h5>00 Customers</h5>
 
                         </div>
