@@ -33,18 +33,18 @@
                 <div class="col"><h2>[BUSINESS NAME] Report</h2><br>
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#pills-home">Customer Demographics</a>
+                            <a class="nav-link active" aria-current="page"  data-bs-toggle="pill" data-bs-target="#report1" href="#pills-home">Customer Demographics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pills-profile">Item Report</a>
+                            <a class="nav-link"  data-bs-toggle="pill" data-bs-target="#report2" href="#pills-profile">Item Report</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#pills-contact">Order Quantity Report</a>
+                            <a class="nav-link" data-bs-toggle="pill" data-bs-target="#report3" href="#pills-contact">Order Quantity Report</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="pills-tabContent"><br>
                         <!-- first tab -->
-                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="tab-pane fade show active" id="report1" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                             <h3>Customers from Cebu City</h3>
                             <div
                                 class="table-responsive"
@@ -85,8 +85,8 @@
                             
                         </div>
                         <!-- second tab -->
-                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                            <h3>Customers that have bought Item Name</h3>
+                        <div class="tab-pane fade" id="report2" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                            <h3>Customers that have bought Item1 and Item2 Together</h3>
                             <div
                                 class="table-responsive"
                             >
@@ -95,12 +95,10 @@
                                 >
                                     <thead>
                                         <tr>
-                                            <th scope="col">Customer Account ID</th>
+                                            <th scope="col">Order ID</th>
                                             <th scope="col">Customer Name</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Birth Date</th>
+                                            <th scope="col">Items</th>
+                                            <th scope="col">Quantity</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -109,13 +107,9 @@
                                             <td>R1C2</td>
                                             <td>R1C3</td>
                                             <td>R1C3</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
                                         </tr>
                                         <tr class="">
                                             <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
                                             <td>Item</td>
                                             <td>Item</td>
                                             <td>Item</td>
@@ -126,44 +120,9 @@
 
                         </div>
                         <!-- third tab -->
-                        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="tab-pane fade" id="report3" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
                             <h3>No. of Customers that have bought Item Name</h3>
-                            <div
-                                class="table-responsive"
-                            >
-                                <table
-                                    class="table table-primary"
-                                >
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Customer Account ID</th>
-                                            <th scope="col">Customer Name</th>
-                                            <th scope="col">First Name</th>
-                                            <th scope="col">Last Name</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Birth Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="">
-                                            <td scope="row">R1C1</td>
-                                            <td>R1C2</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
-                                        </tr>
-                                        <tr class="">
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <h5>00 Customers</h5>
 
                         </div>
                     </div>
