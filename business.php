@@ -45,6 +45,7 @@
 
     $menu = mysqli_fetch_array(mysqli_query($connection,"select * from tblmenu where businessid='".$business_id."'"));
     $menu_id   = $menu[0];
+    $_SESSION['menuid'] = $menu_id;
     $menu_desc = $menu[2];
     
     $items = array();
