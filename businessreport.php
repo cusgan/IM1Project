@@ -19,7 +19,10 @@
     </head>
 
     <body>        
-        <?php include_once 'includes/header.php'; ?>
+        <?php 
+        session_start();
+        include_once('api/connect.php');
+        include_once 'includes/header.php'; ?>
         <main>
             <?php require_once 'includes/login.php'; ?>
             <?php require_once 'includes/signup.php'; ?>
@@ -30,7 +33,7 @@
                 class="row justify-content-center align-items-center g-2"
             >
                 <div class="col-1"></div>
-                <div class="col"><h2>[BUSINESS NAME] Report</h2><br>
+                <div class="col"><h2><?php echo $_SESSION['bname']; ?> Report</h2><br>
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page"  data-bs-toggle="pill" data-bs-target="#report1" href="#pills-home">Customer Demographics</a>
@@ -45,7 +48,7 @@
                     <div class="tab-content" id="pills-tabContent"><br>
                         <!-- first tab -->
                         <div class="tab-pane fade show active" id="report1" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                            <h3>Customers from Cebu City</h3>
+                            <h3>All Items in Ascending Prices</h3>
                             <div
                                 class="table-responsive"
                             >
@@ -54,25 +57,25 @@
                                 >
                                     <thead>
                                         <tr>
-                                            <th scope="col">Customer Account ID</th>
-                                            <th scope="col">Customer Name</th>
-                                            <th scope="col">Address</th>
-                                            <th scope="col">Birth Date</th>
+                                            <th scope="col">Menu Item ID</th>
+                                            <th scope="col">Menu Item Name</th>
+                                            <th scope="col">Menu Item Description</th>
+                                            <th scope="col">Price of Item</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="">
-                                            <td scope="row">R1C1</td>
-                                            <td>R1C2</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
-                                        </tr>
-                                        <tr class="">
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                        </tr>
+                                        <?php
+                                            $item = 1;
+                                            $item_res = mysqli_query($connection,"SELECT * FROM tblmenuitem WHERE menuid='".$_SESSION['menuid']."' ORDER BY buyprice");
+                                            while($item = mysqli_fetch_array($item_res)){
+                                                echo "<tr>
+                                                        <td scope=\"row\">#$item[0]</td>
+                                                        <td>$item[2]</td>
+                                                        <td>$item[3]</td>
+                                                        <td>₱$item[4]</td>
+                                                    </tr>";
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -80,7 +83,7 @@
                         </div>
                         <!-- second tab -->
                         <div class="tab-pane fade" id="report2" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                            <h3>Customers that have bought Item1 and Item2 Together</h3>
+                            <h3>Items with 5 or more in stock</h3>
                             <div
                                 class="table-responsive"
                             >
@@ -89,25 +92,23 @@
                                 >
                                     <thead>
                                         <tr>
-                                            <th scope="col">Order ID</th>
-                                            <th scope="col">Customer Name</th>
-                                            <th scope="col">Items</th>
-                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Menu Item ID</th>
+                                            <th scope="col">Menu Item Name</th>
+                                            <th scope="col">Quantity in Stock</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="">
-                                            <td scope="row">R1C1</td>
-                                            <td>R1C2</td>
-                                            <td>R1C3</td>
-                                            <td>R1C3</td>
-                                        </tr>
-                                        <tr class="">
-                                            <td scope="row">Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                            <td>Item</td>
-                                        </tr>
+                                        <?php
+                                            $item = 1;
+                                            $item_res = mysqli_query($connection,"select * from tblmenuitem where menuid='".$_SESSION['menuid']."' and qty>=5");
+                                            while($item = mysqli_fetch_array($item_res)){
+                                                echo "<tr>
+                                                        <td scope=\"row\">#$item[0]</td>
+                                                        <td>$item[2]</td>
+                                                        <td>$item[4] in stock</td>
+                                                    </tr>";
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -115,8 +116,15 @@
                         </div>
                         <!-- third tab -->
                         <div class="tab-pane fade" id="report3" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                            <h3>No. of Customers that have placed at least 3 Orders</h3>
-                            <h5>00 Customers</h5>
+                            <h3>Total Assets Value</h3>
+                            <h5>
+                            ₱<?php
+                                            $item = 1;
+                                            $item_res = mysqli_query($connection,"select SUM(qty*buyprice) from tblmenuitem where menuid='".$_SESSION['menuid']."'");
+                                            while($item = mysqli_fetch_array($item_res)){
+                                                echo $item[0];
+                                            }
+                                        ?>.00 Pesos Dollars</h5>
 
                         </div>
                     </div>
