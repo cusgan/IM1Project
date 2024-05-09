@@ -28,6 +28,7 @@
             <?php require_once 'includes/signup.php'; ?>
             <?php require_once('includes/signupbusiness.php'); ?>
             <?php
+                                    $menuid = $_SESSION['menuid'];
                                     $sql ="SELECT SUM(buyprice*qty) FROM tblMenuItem WHERE menuid='$menuid'";
                                     $result = mysqli_query($connection,$sql);
                                     $profits = mysqli_fetch_array($result)[0];
