@@ -6,12 +6,15 @@ $filename = $_FILES["itemimg"]["name"];
 $tempname = $_FILES["itemimg"]["tempname"];
 $sql = "INSERT INTO tblmenuitem (menuid, itemname, itemdesc, qty, buyprice, imgurl) 
         VALUES ('".$_POST["menuid"]."', '".$_POST["inptItemName"]."', '".$_POST["inptDescription"]."', '".$_POST["inptStock"]."', '".$_POST["inptPrice"]."','".$filename."')";
-if ($connection->query($sql) === TRUE) {
-    $itemid = $connection->insert_id;
-    if(move_uploaded_file($tempname, "../itemimgs/".$filename)){
-        echo "image uploaded good";
-    }
+if(mysqli_query($connection,$sql)){
+    $smile = true;
+    $big = "Success!";
+    $mid = "Added item to menu successfully.";
 } else {
-    echo "Error: " . $sql . "<br>" . $connection->error;
+    $smile = false;
+    $big = "Error!";
+    $mid = "There has been a problem in adding the new item.";
 }
-echo "inserting item....";
+$sml = "Returning to Business Menu view...";
+require_once("intermediary.php");
+displayIntermediaryLocal($smile,$big,$mid,$sml);

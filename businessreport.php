@@ -80,7 +80,7 @@
                                                         <td scope=\"row\">#$item[0]</td>
                                                         <td>$item[2]</td>
                                                         <td>$item[3]</td>
-                                                        <td>₱$item[4]</td>
+                                                        <td>₱".number_format($item[4],2)."</td>
                                                     </tr>";
                                             }
                                         ?>
@@ -137,7 +137,8 @@
                                             $item = 1;
                                             $item_res = mysqli_query($connection,"select SUM(qty*buyprice) from tblmenuitem where menuid='".$_SESSION['menuid']."'");
                                             while($item = mysqli_fetch_array($item_res)){
-                                                echo "<td>₱$item[0]</td>";
+                                                $money = number_format($item[0],2);
+                                                echo "<td>₱$money</td>";
                                             }
                                         ?>
                                     </tbody>
