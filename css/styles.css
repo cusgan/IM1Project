@@ -1,5 +1,26 @@
 footer {
-    background-color: aliceblue;
+    color: #CC222A;
+}
+
+body {
+    font-family: 'DM Sans';
+    background-color: #EFF2EF;
+}
+
+a {
+    color: #CC222A;
+}
+
+.btn {
+    background-color: #F9D802;
+    border-color: #F9D802;
+    color: #CC222A;
+}
+
+.btn:hover {
+    background-color: #CC222A;
+    border-color: #CC222A;
+    color: #F9D802;
 }
 
 .carousel-item img {
@@ -12,4 +33,46 @@ footer {
 }
 .carousel-caption {
     text-shadow: 0px 0px 10px black;
+}
+
+.navbar {
+    background-color: #CC222A;
+    font-size: larger;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+}
+
+.navbar :hover {
+    color: #F9D802;
+}
+
+.navbar :active {
+    color: #F9D802;
+}
+
+.navbar a {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    color: #EFF2EF;
+}
+
+.navbar a :hover {
+    color: #F9D802;
+}
+
+.navbar a :active {
+    color: #F9D802;
+}
+
+.modal-header {
+    background-color: #CC222A;
+    color: #EFF2EF;
+}
+
+.modal-content {
+    background-color: #EFF2EF;
 }
