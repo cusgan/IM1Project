@@ -2,6 +2,17 @@
 <html lang="en">
     
     <?php require_once 'includes/head.php'; ?>
+    <head>
+        <style>
+            
+            .nav.tabletab {
+                background-color: #CC222A !important;
+                border-color: #CC222A;
+                color: #F9D802;
+            }
+        </style>
+    </head>
+    
 
     <body>        
         <?php 
@@ -26,12 +37,12 @@
                 <div class="col"><h2><?php echo $_SESSION['bname']; ?> Report</h2><br>
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"  data-bs-toggle="pill" data-bs-target="#report1" href="#pills-home">Tables</a>
+                            <a class="nav-link active tabletab" aria-current="page"  data-bs-toggle="pill" data-bs-target="#report1" href="#pills-home">Tables</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item tabletab">
                             <a class="nav-link"  data-bs-toggle="pill" data-bs-target="#report2" href="#pills-profile">Statistics</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item tabletab">
                             <a class="nav-link" data-bs-toggle="pill" data-bs-target="#report3" href="#pills-contact">Charts</a>
                         </li>
                     </ul>
@@ -62,7 +73,7 @@
                                                         <td scope=\"row\">#$item[0]</td>
                                                         <td>$item[2]</td>
                                                         <td>$item[3]</td>
-                                                        <td>₱$item[4]</td>
+                                                        <td>₱".number_format($item[4],2)."</td>
                                                     </tr>";
                                             }
                                         ?>
@@ -119,7 +130,8 @@
                                             $item = 1;
                                             $item_res = mysqli_query($connection,"select SUM(qty*buyprice) from tblmenuitem where menuid='".$_SESSION['menuid']."'");
                                             while($item = mysqli_fetch_array($item_res)){
-                                                echo "<td>₱$item[0]</td>";
+                                                $money = number_format($item[0],2);
+                                                echo "<td>₱$money</td>";
                                             }
                                         ?>
                                     </tbody>

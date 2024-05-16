@@ -4,7 +4,10 @@
     <?php require_once 'includes/head.php'; ?>
 
     <body>
-        <?php include_once 'includes/header.php'; ?>
+        <?php 
+        session_start();
+        include_once 'includes/header.php';
+        require_once 'api/connect.php'; ?>
         <main>            
             <?php require_once 'includes/login.php'; ?>
             <?php require_once 'includes/signup.php'; ?>
@@ -32,36 +35,24 @@
                                 </tr>
                             </thead>
                             <tbody class="table-group-divider">
-                                <tr
-                                    class="table-primary"
-                                >
-                                    <td scope="row">Item Name</td>
-                                    <td class="w-25">                                        
-                                        <input type="number" class="form-control w-50" name="inptStock" id="input2" placeholder="Qty.">
-                                    </td>
-                                    <td>₱00.00</td>
-                                    <td>₱00.00</td>
-                                </tr>
-                                <tr
-                                    class="table-primary"
-                                >
-                                    <td scope="row">Item Name</td>
-                                    <td class="w-25">                                        
-                                        <input type="number" class="form-control w-50" name="inptStock" id="input2" placeholder="Qty.">
-                                    </td>
-                                    <td>₱00.00</td>
-                                    <td>₱00.00</td>
-                                </tr>
-                                <tr
-                                    class="table-primary"
-                                >
-                                    <td scope="row">Item Name</td>
-                                    <td class="w-25">                                        
-                                        <input type="number" class="form-control w-50" name="inptStock" id="input2" placeholder="Qty.">
-                                    </td>
-                                    <td>₱00.00</td>
-                                    <td>₱00.00</td>
-                                </tr>
+                                <?php //require_once 'includes/cartitem.php'; 
+                                    $userid = $_SESSION['userid'];
+                                    $template = file_get_contents("includes/cartitem.php");
+                                    $total = 0;
+                                    $citem_res = mysqli_query($connection,"select cartitemid,tblcartitem.itemid,tblcartitem.userid,itemname,itemdesc,cartqty,buyprice,cartqty*buyprice from tblcartitem,tblmenuitem where userid='".$userid."' AND tblcartitem.itemid=tblmenuitem.itemid");
+                                    while($citem = mysqli_fetch_array($citem_res)){
+                                        $res = $template;
+                                        $res = str_replace("[CARTITEMID]",$citem[0],$res);
+                                        $res = str_replace("[ITEMID]",$citem[1],$res);
+                                        $res = str_replace("[NAME]",$citem[3],$res);
+                                        $res = str_replace("[DESCRIPTION]",$citem[4],$res);
+                                        $res = str_replace("[QUANTITY]",$citem[5],$res);
+                                        $res = str_replace("[PRICE]",number_format($citem[6],2),$res);
+                                        $res = str_replace("[TOTAL]",number_format($citem[7],2),$res);
+                                        $total += $citem[7];
+                                        echo $res;
+                                    }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -79,7 +70,7 @@
                             <h3 style="text-align: right;">Total Cost</h3>
                         </div>
                         <div class="col">
-                            <h4 style="text-align: center;">₱00.00</h4>
+                            <h4 style="text-align: center;">₱ <?php echo number_format($total,2);?></h4>
                         </div>
                     </div>
                     <br>

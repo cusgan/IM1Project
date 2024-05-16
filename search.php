@@ -4,30 +4,24 @@
 <body style="padding-bottom: 10rem;">
     <?php 
     session_start();
-
+    $search_query = "";
+    if(isset($_POST['search_query'])) {
+        $search_query = $_POST['search_query'];
+        unset($_POST['$search_query']);
+    }
     require_once("includes/header.php"); 
     require_once('includes/login.php'); 
     require_once('includes/signup.php');
     require_once('includes/signupbusiness.php'); 
-    // if(!isset($_SESSION['userid'])){
-    //     header("Location: index.php");
-    // }
     include_once("api/connect.php");
-    $business_id = $_SESSION['businessid'];
-    //$business = mysqli_fetch_array(mysqli_query($connection,"select * from tblbusiness where businessid='".$business_id."'"));
-    $business_name = $_SESSION['bname'];
-    $business_desc = $_SESSION['bdesc'];
-    $business_addr = $_SESSION['baddr'];
-
-    $menu = mysqli_fetch_array(mysqli_query($connection,"select * from tblmenu where businessid='".$business_id."'"));
-    $menu_id   = $menu[0];
-    $_SESSION['menuid'] = $menu_id;
-    $menu_desc = $menu[2];
-    
     $items = array();
     $item = 1;
     $item_ctr = 0;
-    $item_res = mysqli_query($connection,"select * from tblmenuitem");
+    if($search_query == "")
+        $item_res = mysqli_query($connection,"SELECT * from tblmenuitem");
+    else
+        $item_res = mysqli_query($connection,"SELECT * from tblmenuitem WHERE itemname LIKE '%".$search_query."%'");
+        
     while($item = mysqli_fetch_array($item_res)){
         // if($item == null){
         //     break;
@@ -69,7 +63,7 @@
             }
             include_once 'api/menuitem.php'; 
             for($i = 0; $i < $citem_ctr; $i++){
-                displayCartItem($citems[$i][1],$citems[$i][2],$citems[$i][3],$citems[$i][4],$citems[$i][5],$citems[$i][6]);
+                displayCartItem($citems[$i][0],$citems[$i][1],$citems[$i][2],$citems[$i][3],$citems[$i][4],$citems[$i][5],$citems[$i][6]);
                 // echo "a ";
                 // print_r($items[$i]);
             }
@@ -95,16 +89,23 @@
         <div class="col"><br>
             <h2>Search for Items</h2><br>
             <div class="mb-3">
-                <label for="" class="form-label">Name</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    name=""
-                    id=""
-                    aria-describedby="helpId"
-                    placeholder=""
-                />
+                <form method="post" action="search.php">
+                    <label for="" class="form-label">Name</label>
+                    <?php
+                        echo
+                        '<input
+                            type="text"
+                            class="form-control"
+                            name="search_query"
+                            id=""
+                            aria-describedby="helpId"
+                            placeholder=""
+                            value="'.$search_query.'"
+                        />';
+                    ?>
+                    <button type="submit" class="btn btn-primary">Search</button>
                 <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                </form>
             </div>
             
             <div class="row">

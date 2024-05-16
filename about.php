@@ -116,7 +116,7 @@
                                 <h1 class="card-title" style="color: #F9D802">Basil Mendoza</h1>
                                 <h5>CEO and Founder</h5>
                                 <p class="card-text">
-                                    A girl with a love for food and efficiency. From her tendency to get impatient and hangry, came the idea of <b>KaOnTime</b>, the quick food delivery service.
+                                    A boy with a love for food and efficiency. From his tendency to get impatient and hangry, came the idea of <b>KaOnTime</b>, the quick food delivery service.
                                 </p>
                                 <br><hr>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
