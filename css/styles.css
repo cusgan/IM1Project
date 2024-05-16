@@ -89,3 +89,16 @@ a {
 .modal-content {
     background-color: #EFF2EF;
 }
+
+.nav-pills > li > a.active {
+    background-color: #CC222A !important;
+    color: #F9D802 !important;
+}
+
+.nav-link {
+    color: #CC222A;
+}
+
+.nav-link:hover {
+    color: #CC222A;
+}
