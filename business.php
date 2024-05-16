@@ -69,18 +69,18 @@
             
 
             <!-- <button type="button" class="btn btn-primary">Add New Menu Item</button> -->
-            <a class="btn btn-primary w-75" href="#" data-bs-toggle="modal" data-bs-target="#modalAddItem"> 
+            <a class="btn btn-success w-75" href="#" data-bs-toggle="modal" data-bs-target="#modalAddItem"> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16" style="margin-top:-5px;">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                 </svg><i class="bi bi-plus-circle-fill"></i>
                 Add New Menu Item</a>
-            <a class="btn btn-secondary" href="businessreport.php"> Open business report </a>
+            <a class="btn btn-secondary w-75" href="businessreport.php"> Business Report </a>
             <form method="post" action="api/deactivate.php">
                 <input type="hidden" name="origin" value="business.php">
                 <?php 
                 $accid = $_SESSION['accid'];
                 echo "<input type=\"hidden\" name=\"accid\" value=\"$accid\">"; ?>
-                <button type="submit" class="btn btn-primary">Deactivate Business Account</button>
+                <button type="submit" class="btn btn-primary w-75">Deactivate Business</button>
             </form>
             <div class="modal fade" id="modalAddItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
