@@ -1,6 +1,6 @@
 <!-- Signup -->
 <div class="modal fade" id="modalSignup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
@@ -39,8 +39,8 @@
                 <!--<button type="submit" class="btn btn-primary">Submit</button>-->                  
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="button" data-bs-target="#modalLogin" class="btn w-25 btn-secondary" data-bs-toggle="modal">Return</button>
+                <button type="submit" class="btn w-25 btn-primary">Sign Up</button>
             </div>
         </form> 
     </div>

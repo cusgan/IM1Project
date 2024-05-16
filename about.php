@@ -47,8 +47,19 @@
                     <div class="card card-info">
                         <div class="card-body" style="margin: 1rem;">
                         <h1 class="card-title">About Us</h1>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                        <p class="card-text">
+                        We are a company who deliver Bay boy say he wanted to get his jionmion giggalasnack apaindn a futlmanutlnsees, bay boy say say jittleline my jittleyou, bittleyou until a sneeblesnap apens. pongulla ooh snacks you wanna see that attleha barnes monasnacks but no cuttle a snap a snap apns? jouhnallasnapapns. oohsnayapakayysnns
+                                frash jiggaladangdang, frash fu'ldang
+                                frash manu'inn snackapappappins
+                                yes sirskis, fu'l ya la'uhpins
+                                yes sir, this blun right here gon make sure you fu'da la'uhpuss
+                                yanaw imsayin?
+                                pepto bissolsnu'ins, fu'l snoo'ins
+                                baongno fu'lls, yanaw imsayin- happiravenmanu'llsnoozes
+                                yes sir, blow out the ma'l nu'l yu'ins
+                                the manu'l nu'l manugin dewgins
+                                yes sir, mhhnah thats a thats a good one, thats a bi'll snoot
+                        </p>
                         </div>
                     </div>
                     <div class="card card-info">

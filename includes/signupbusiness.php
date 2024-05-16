@@ -35,8 +35,8 @@
                 <!--<button type="submit" class="btn btn-primary">Submit</button>-->                  
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Apply</button>
+                <button type="button" data-bs-target="#modalLogin" class="btn w-25 btn-secondary" data-bs-toggle="modal">Return</button>
+                <button type="submit" class="btn w-25 btn-primary">Apply</button>
             </div>
         </form> 
     </div>

@@ -6,6 +6,8 @@
         <?php include_once 'includes/header.php'; ?>
         <main>
             <?php require_once 'includes/login.php'; ?>
+            <?php require_once 'includes/signup.php'; ?>
+            <?php require_once 'includes/signupbusiness.php'; ?>
 
           <!--Landing-->
           <div class="row container-fluid justify-content-evenly">

@@ -5,22 +5,35 @@ footer {
 body {
     font-family: 'DM Sans';
     background-color: #EFF2EF;
+    overflow-x: hidden;
 }
 
 a {
     color: #CC222A;
 }
 
-.btn {
+.btn-secondary {
     background-color: #F9D802;
     border-color: #F9D802;
     color: #CC222A;
 }
 
-.btn:hover {
+.btn-secondary:hover {
     background-color: #CC222A;
     border-color: #CC222A;
     color: #F9D802;
+}
+
+.btn-primary {
+    background-color: #CC222A;
+    border-color: #CC222A;
+    color: #F9D802;
+}
+
+.btn-primary:hover {
+    background-color: #F9D802;
+    border-color: #F9D802;
+    color: #CC222A;
 }
 
 .carousel-item img {

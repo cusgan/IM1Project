@@ -13,7 +13,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalOpts" style="font-weight: bold">KaOn-Now!</a>
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin" style="font-weight: bold">KaOn-Now!</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalLogin">Log In</a>
