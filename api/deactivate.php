@@ -10,7 +10,7 @@ if(mysqli_query($connection,$sql)){
     $smile = false;
     $big = "Goodbye!";
     $mid = "Your account has now been deactivated.";
-    $sml = "Returning to Landing Page...";
+    $sml = "Thank you for using KaOnTime!";
     header( "refresh:3; url=../index.php" ); 
 } else {
     $smile = false;
@@ -19,5 +19,9 @@ if(mysqli_query($connection,$sql)){
     $sml = "Returning to Previous Page...";
     header( "refresh:3; url=../$origin.php" ); 
 }
+$variables_list = "invalidlogin accid userid username email fname lname address birthday businessid bname bdesc baddr";
+$variables = explode(" ",$variables_list);
+foreach($variables as $var)
+    if(isset($_SESSION["$var"])) unset($_SESSION["$var"]);
 require_once("intermediary.php");
 displayIntermediaryLocal($smile,$big,$mid,$sml);

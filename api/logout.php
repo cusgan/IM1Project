@@ -1,5 +1,6 @@
 <?php
 header( "refresh:1; url=../index.php" ); 
+session_start();
 $variables_list = "invalidlogin accid userid username email fname lname address birthday businessid bname bdesc baddr";
 $variables = explode(" ",$variables_list);
 foreach($variables as $var)

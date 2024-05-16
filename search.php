@@ -3,7 +3,7 @@
 <?php require_once 'includes/head.php'; ?>
 <body style="padding-bottom: 10rem;">
     <?php 
-    session_start();
+    //session_start();
     $search_query = "";
     if(isset($_POST['search_query'])) {
         $search_query = $_POST['search_query'];

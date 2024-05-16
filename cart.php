@@ -5,7 +5,7 @@
 
     <body>
         <?php 
-        session_start();
+        //session_start();
         include_once 'includes/header.php';
         require_once 'api/connect.php'; ?>
         <main>            

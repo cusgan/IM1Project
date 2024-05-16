@@ -24,6 +24,22 @@
             <li class="nav-item">
               <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalSignupBusiness">Apply as Business</a>
             </li> -->
+            <?php 
+            session_start();
+            if(isset($_SESSION['fname'])){
+              echo '
+              <li class="nav-item">
+                <a class="nav-link" href="search.php">Browse for Food</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="cart.php">View Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="api/logout.php">LogOut</a>
+              </li>
+              ';
+            }
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="about.php">About Us</a>
             </li>
