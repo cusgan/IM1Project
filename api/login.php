@@ -18,7 +18,7 @@
 	} else if ($countUName != 0){
 		$row = mysqli_fetch_array($resultuname);
 	}
-	if (($countEmail == 0 && $countUName == 0) || ($row[5] != $pwd)){
+	if (($countEmail == 0 && $countUName == 0) || ($row[5] != $pwd) || $row[6]){
 		// echo "<script language='javascript'>
 		// 		alert('Incorrect password');
 		// 		</script>";

@@ -16,7 +16,7 @@
 </head>
 <body>
 <?php
-    header( "refresh:5; url=../index.php" ); 
+    header( "refresh:3; url=../index.php" ); 
     include_once('connect.php');
     $mail = $_POST["busMail"];
     $name = $_POST["busName"];

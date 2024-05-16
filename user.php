@@ -58,7 +58,14 @@
             <h3>Mobile Number</h3>
             <h5>+63 901 234 5678</h5><br>
 
-            <button type="button" class="btn btn-primary">Edit User Info</button>
+            <button type="submit" class="btn btn-secondary">Edit User Info</button>
+            <form method="post" action="api/deactivate.php">
+                <input type="hidden" name="origin" value="user.php">
+                <?php 
+                $accid = $_SESSION['accid'];
+                echo "<input type=\"hidden\" name=\"accid\" value=\"$accid\">"; ?>
+                <button type="submit" class="btn btn-primary">Deactivate my Account</button>
+            </form>
 
         </div>
         <div class="col-1"></div>

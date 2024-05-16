@@ -29,17 +29,9 @@
     $item_ctr = 0;
     $item_res = mysqli_query($connection,"select * from tblmenuitem where menuid='".$menu_id."'");
     while($item = mysqli_fetch_array($item_res)){
-        // if($item == null){
-        //     break;
-        // }
         array_push($items, $item);
         $item_ctr = $item_ctr + 1;
     }
-    // while ($row = mysql_fetch_assoc($result)) {
-    //     echo $row["userid"];
-    //     echo $row["fullname"];
-    //     echo $row["userstatus"];
-    // }
 
     
 
@@ -83,6 +75,13 @@
                 </svg><i class="bi bi-plus-circle-fill"></i>
                 Add New Menu Item</a>
             <a class="btn btn-secondary" href="businessreport.php"> Open business report </a>
+            <form method="post" action="api/deactivate.php">
+                <input type="hidden" name="origin" value="business.php">
+                <?php 
+                $accid = $_SESSION['accid'];
+                echo "<input type=\"hidden\" name=\"accid\" value=\"$accid\">"; ?>
+                <button type="submit" class="btn btn-primary">Deactivate Business Account</button>
+            </form>
             <div class="modal fade" id="modalAddItem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                 <div class="modal-content">
