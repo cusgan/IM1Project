@@ -3,7 +3,7 @@
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Apply as Business</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Register Business</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form method="post" action="api/signupbusiness.php">
@@ -36,7 +36,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" data-bs-target="#modalLogin" class="btn w-25 btn-secondary" data-bs-toggle="modal">Return</button>
-                <button type="submit" class="btn w-25 btn-primary">Apply</button>
+                <button type="submit" class="btn w-50 btn-primary">Register Business</button>
             </div>
         </form> 
     </div>

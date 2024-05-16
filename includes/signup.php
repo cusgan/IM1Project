@@ -40,7 +40,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" data-bs-target="#modalLogin" class="btn w-25 btn-secondary" data-bs-toggle="modal">Return</button>
-                <button type="submit" class="btn w-25 btn-primary">Sign Up</button>
+                <button type="submit" class="btn w-50 btn-primary">Sign Up</button>
             </div>
         </form> 
     </div>

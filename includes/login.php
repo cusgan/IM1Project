@@ -47,7 +47,7 @@
             <button type="submit" class="btn w-100 btn-secondary">Log In</button>
             <br><br>
             No account yet? <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignup">Sign Up</a><br>
-            Ready to serve your own KaOn? <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignupBusiness">Apply Business</a>
+            Ready to serve your own KaOn? <a href="#" data-bs-toggle="modal" data-bs-target="#modalSignupBusiness">Register Business</a>
             <br><br>
         </div>
         <!-- <div class="modal-footer">
