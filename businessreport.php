@@ -24,23 +24,29 @@
             <?php require_once 'includes/signup.php'; ?>
             <?php require_once('includes/signupbusiness.php'); ?>
             <?php
-                                    $menuid = $_SESSION['menuid'];
-                                    $sql ="SELECT SUM(buyprice*qty) FROM tblMenuItem WHERE menuid='$menuid'";
-                                    $result = mysqli_query($connection,$sql);
-                                    $profits = mysqli_fetch_array($result)[0];
-                                ?>
+                $menuid = $_SESSION['menuid'];
+                $sql ="SELECT SUM(buyprice*qty) FROM tblMenuItem WHERE menuid='$menuid'";
+                $result = mysqli_query($connection,$sql);
+                $profits = mysqli_fetch_array($result)[0];
+            ?>
             <br>
-            <div
-                class="row justify-content-center align-items-center g-2"
-            >
+            <div class="row justify-content-center align-items-center g-2">
                 <div class="col-1"></div>
-                <div class="col"><h2><?php echo $_SESSION['bname']; ?> Report</h2><br>
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <h2><?php echo $_SESSION['bname']; ?> Report</h2>
+                        </div>
+                        <div class="col-3">
+                            <a name="" id="btnReturnToBusiness" class="btn btn-secondary" href="business.php" "button">Return to my Business Page</a>
+                         </div>
+                    </div><br>
                     <ul class="nav nav-pills nav-fill">
                         <li class="nav-item">
-                            <a class="nav-link active tabletab" aria-current="page"  data-bs-toggle="pill" data-bs-target="#report1" href="#pills-home">Tables</a>
+                            <a class="nav-link active tabletab" aria-current="page" data-bs-toggle="pill" data-bs-target="#report1" href="#pills-home">Tables</a>
                         </li>
                         <li class="nav-item tabletab">
-                            <a class="nav-link"  data-bs-toggle="pill" data-bs-target="#report2" href="#pills-profile">Statistics</a>
+                            <a class="nav-link" data-bs-toggle="pill" data-bs-target="#report2" href="#pills-profile">Statistics</a>
                         </li>
                         <li class="nav-item tabletab">
                             <a class="nav-link" data-bs-toggle="pill" data-bs-target="#report3" href="#pills-contact">Charts</a>
@@ -290,14 +296,17 @@
                     </div>
                 </div>
                 <div class="col-1"></div>
+                
+                
             </div>
             
-
+            
             
         </main>
 
         <footer>
-            <!-- place footer here -->
+            
+            <?php include_once 'includes/footer.php'; ?>
         </footer>
 
         <!-- Bootstrap JavaScript Libraries -->

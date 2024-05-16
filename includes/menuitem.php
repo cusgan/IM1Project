@@ -12,8 +12,8 @@
                         <h5 class="card-title">[ITEM NAME]</h5>
                         <p class="card-text">[ITEM DESCRIPTION]</p>
                         <p class="card-text"><small class="text-muted"><b>₱[ITEM PRICE]</b> | [ITEM STOCK] in stock</small></p>
-                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modalUpdateItem[ITEMID]"> Update Details</a>
-                    <a class="btn btn-danger" href="#" data-bs-toggle="modal" data-bs-target="#modalDeleteItem[ITEMID]"> Delete Item</a>
+                    <a class="btn btn-secondary" href="#" data-bs-toggle="modal" data-bs-target="#modalUpdateItem[ITEMID]"> Update Details</a>
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modalDeleteItem[ITEMID]"> Delete Item</a>
                     </div>
                 </div>
             </div>
