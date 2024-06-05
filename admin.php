@@ -66,6 +66,7 @@
                                             <th scope="col">Last Name</th>
                                             <th scope="col">Address</th>
                                             <th scope="col">Birthdate</th>
+                                            <th scope="col">Phone #</th>
                                             <th scope="col">Deleted</th>
                                             <th scope="col">Actions</th>
                                         </tr>
@@ -87,6 +88,7 @@
                                                         <td>$item[3]</td>
                                                         <td>$item[4]</td>
                                                         <td>$item[5]</td>
+                                                        <td>$item[7]</td>
                                                         <td>$isdel</td>
                                                         <td class=\"col\">
                                                             <form method=\"post\" action=\"api/adminquery.php\">
