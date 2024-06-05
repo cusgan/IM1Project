@@ -122,7 +122,7 @@
         </div>
         <div class="col-1"></div>
         <div class="col"><br>
-            <h2>Menu</h2><br>
+            <h2>Restaurant Reviews</h2><br>
             <p><?php echo $menu_desc;?></p>
             <div class="row">
                 <div class="col"></div>
