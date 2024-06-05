@@ -22,7 +22,8 @@
         <main>
             <?php require_once 'includes/login.php'; ?>
             <?php require_once 'includes/signup.php'; ?>
-            <?php require_once('includes/signupbusiness.php'); ?>
+            <?php require_once('includes/signupbusiness.php'); 
+                                        require_once("api/admin.php");?>
             <?php
             ?>
             <br>
@@ -74,15 +75,21 @@
                                             $item = 1;
                                             $item_res = mysqli_query($connection,"SELECT * FROM tbluser ORDER BY userid ASC");
                                             while($item = mysqli_fetch_array($item_res)){
+                                                $isdel = "Active";
+                                                if($item[6]) $isdel="Deleted";
                                                 echo "<tr>
                                                         <td scope=\"row\">#$item[0]</td>
                                                         <td>$item[2]</td>
                                                         <td>$item[3]</td>
                                                         <td>$item[4]</td>
                                                         <td>$item[5]</td>
-                                                        <td>$item[6]</td>
-                                                        <td><button class=\"btn\">Edit</button></td>
+                                                        <td>$isdel</td>
+                                                        <td>
+                                                            <a class=\"btn btn-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalEditUser$item[0]\" >Edit</a> 
+                                                            <button class=\"btn btn-primary\">Delete</button>
+                                                        </td>
                                                     </tr>";
+                                                editUserModal($item[0], $item[2], $item[3], $item[4], $item[5], $item[6], $item[7]);
                                             }
                                         ?>
                                     </tbody>
@@ -120,12 +127,14 @@
                                             $item = 1;
                                             $item_res = mysqli_query($connection,"select * from tblbusiness");
                                             while($item = mysqli_fetch_array($item_res)){
+                                                $isdel = "Active";
+                                                if($item[5]) $isdel="Deleted";
                                                 echo "<tr>
                                                         <td scope=\"row\">#$item[0]</td>
                                                         <td>$item[2]</td>
                                                         <td>$item[3]</td>
                                                         <td>$item[4]</td>
-                                                        <td>$item[5]</td>
+                                                        <td>$isdel</td>
                                                         <td>edit</td>
                                                     </tr>";
                                             }
