@@ -13,6 +13,16 @@ if($queryType == "updateUser"){
     $sql = "UPDATE tbluser 
         SET firstname = '$fname', lastname = '$lname', address = '$addr', birthdate = $bday, phonenumber = '$phone'
         WHERE userid = $userid;";
+} else if($queryType == "deleteUser"){
+    $userid = $_POST["adminUserID"];
+    $sql = "UPDATE tbluser 
+        SET isdeleted = 1
+        WHERE userid = $userid;";
+} else if($queryType == "restoreUser"){
+    $userid = $_POST["adminUserID"];
+    $sql = "UPDATE tbluser 
+        SET isdeleted = 0
+        WHERE userid = $userid;";
 }
 if(mysqli_query($connection,$sql)){
     $smile = true;

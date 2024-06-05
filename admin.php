@@ -77,6 +77,10 @@
                                             while($item = mysqli_fetch_array($item_res)){
                                                 $isdel = "Active";
                                                 if($item[6]) $isdel="Deleted";
+                                                $delbtn = "deleteUser";
+                                                if($item[6]) $delbtn="restoreUser";
+                                                $deltxt = "Delete";
+                                                if($item[6]) $deltxt="Restore";
                                                 echo "<tr>
                                                         <td scope=\"row\">#$item[0]</td>
                                                         <td>$item[2]</td>
@@ -84,9 +88,13 @@
                                                         <td>$item[4]</td>
                                                         <td>$item[5]</td>
                                                         <td>$isdel</td>
-                                                        <td>
-                                                            <a class=\"btn btn-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalEditUser$item[0]\" >Edit</a> 
-                                                            <button class=\"btn btn-primary\">Delete</button>
+                                                        <td class=\"col\">
+                                                            <form method=\"post\" action=\"api/adminquery.php\">
+                                                            <a class=\"btn btn-secondary\" data-bs-toggle=\"modal\" data-bs-target=\"#modalEditUser$item[0]\" >Edit</a>
+                                                                <input type=\"hidden\" name=\"adminUserID\" value=\"$item[0]\">
+                                                                <input type=\"hidden\" name=\"adminQueryType\" value=\"$delbtn\">
+                                                                <button type=\"submit\" class=\"btn btn-primary\">$deltxt</button>
+                                                            </form>
                                                         </td>
                                                     </tr>";
                                                 editUserModal($item[0], $item[2], $item[3], $item[4], $item[5], $item[6], $item[7]);
